@@ -17,3 +17,6 @@ coverage
 
 *.orig
 .npmrc
+.yarnrc
+.yarnrc.yml
+.yarn/

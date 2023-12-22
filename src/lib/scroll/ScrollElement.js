@@ -102,7 +102,7 @@ class ScrollElement extends Component {
 
   handleTouchStart = (e) => {
     if (e.touches.length === 2) {
-      e.preventDefault()
+      // e.preventDefault()
 
       this.lastTouchDistance = Math.abs(
         e.touches[0].screenX - e.touches[1].screenX
@@ -110,7 +110,7 @@ class ScrollElement extends Component {
       this.singleTouchStart = null
       this.lastSingleTouch = null
     } else if (e.touches.length === 1) {
-      e.preventDefault()
+      // e.preventDefault()
 
       let x = e.touches[0].clientX
       let y = e.touches[0].clientY
@@ -124,11 +124,11 @@ class ScrollElement extends Component {
   handleTouchMove = (e) => {
     const { isInteractingWithItem, width, onZoom } = this.props
     if (isInteractingWithItem) {
-      e.preventDefault()
+      // e.preventDefault()
       return
     }
     if (this.lastTouchDistance && e.touches.length === 2) {
-      e.preventDefault()
+      // e.preventDefault()
       let touchDistance = Math.abs(e.touches[0].screenX - e.touches[1].screenX)
       let parentPosition = getParentPosition(e.currentTarget)
       let xPosition =
@@ -138,7 +138,7 @@ class ScrollElement extends Component {
         this.lastTouchDistance = touchDistance
       }
     } else if (this.lastSingleTouch && e.touches.length === 1) {
-      e.preventDefault()
+      // e.preventDefault()
       let x = e.touches[0].clientX
       let y = e.touches[0].clientY
       let deltaX = x - this.lastSingleTouch.x
